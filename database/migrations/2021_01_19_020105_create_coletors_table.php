@@ -17,7 +17,6 @@ class CreateColetorsTable extends Migration
             $table->id();
             $table->string('perfil');
             $table->string('telefone');
-            $table->integer('user_id');
             $table->timestamps();
         });
     }
