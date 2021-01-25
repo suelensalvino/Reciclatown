@@ -40,4 +40,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function produtoDescartes(){
+
+        return $this->hasMany(ProdutoDescarte::class);
+    }
+
+    public function descarteUsuarios(){
+
+        return $this->hasMany(DescarteUsuario::class);
+
+    }
+
+    public function coletors(){
+
+        return $this->hasOne(Coletor::class);
+    
+    }
 }
