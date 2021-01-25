@@ -16,7 +16,8 @@ class CreateProdutoDescartesTable extends Migration
         Schema::create('produto_descartes', function (Blueprint $table) {
             $table->id();
             $table->date('data');
-            $table->decimal('quantidade', $precision = 8, $scale = 2);
+            $table->string('categoria');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
