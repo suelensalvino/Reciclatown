@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsuarioProdutoDescartesTable extends Migration
+class CreateDescarteUsuariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateUsuarioProdutoDescartesTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario_produto_descartes', function (Blueprint $table) {
+        Schema::create('descarte_usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('categoria');
+            $table->integer('quantidade');
+            $table->integer('user_id');
+            $table->integer('produto_descartes_id');
             $table->timestamps();
         });
     }
