@@ -15,8 +15,10 @@ class CreateAgendamentoDescartesTable extends Migration
     {
         Schema::create('agendamento_descartes', function (Blueprint $table) {
             $table->id();
-            $table->time('horario', $precision = 0);
+            $table->time('horario');
             $table->string('local');
+            $table->integer('coletors_id');
+            $table->integer('descarte_usuarios_id');
             $table->timestamps();
         });
     }
