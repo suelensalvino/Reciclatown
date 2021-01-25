@@ -12,7 +12,7 @@ class ProdutoDescarteFactory extends Factory
      *
      * @var string
      */
-    protected $model = produto_descarte::class;
+    protected $model = ProdutoDescarte::class;
 
     /**
      * Define the model's default state.

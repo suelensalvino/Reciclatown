@@ -12,7 +12,7 @@ class AgendamentoDescarteFactory extends Factory
      *
      * @var string
      */
-    protected $model = agendamento_descarte::class;
+    protected $model = AgendamentoDescarte::class;
 
     /**
      * Define the model's default state.
