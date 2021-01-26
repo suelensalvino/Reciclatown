@@ -9,7 +9,18 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+                  <!---listanto os produtos de descarte do usuário--->
+
+                  <div class="grid grid-cols-4"> 
+                       @foreach(Auth::user()->ProdutoDescartes as $categoria)
+                            @foreach(Auth::user()->DescarteUsuarios as $produto)
+                            <div class="p-3 m-1 border rounded-lg hover:bg-gray-200 ">
+                               Categoria: {{$categoria->categoria}} (quantidade disponivel)  {{ $produto->quantidade}}
+                            </div>
+                            @endforeach
+                      @endforeach
+                  </div>
+
                 </div>
             </div>
         </div>
