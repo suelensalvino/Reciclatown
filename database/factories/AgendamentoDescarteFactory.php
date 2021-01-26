@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\agendamento_descarte;
+use App\Models\AgendamentoDescarte;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AgendamentoDescarteFactory extends Factory
@@ -22,7 +22,9 @@ class AgendamentoDescarteFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
+            'horario' => $this->faker->time,
+            'local' => $this->faker->word,
         ];
     }
 }
