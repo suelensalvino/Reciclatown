@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\usuario_produto_descarte;
+use App\Models\DescarteUsuario;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DescarteUsuarioFactory extends Factory
@@ -22,7 +22,7 @@ class DescarteUsuarioFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'quantidade' => $this->faker->randomNumber(2,false),
         ];
     }
 }
