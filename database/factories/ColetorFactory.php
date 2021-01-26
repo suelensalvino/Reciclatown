@@ -22,7 +22,9 @@ class ColetorFactory extends Factory
     public function definition()
     {
         return [
-            //
+
+            'perfil' => $this->faker->paragraph,
+            'telefone' => $this->faker->word,
         ];
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Models\Coletor;
 use Illuminate\Database\Seeder;
 
 class ColetorSeeder extends Seeder
@@ -13,6 +15,10 @@ class ColetorSeeder extends Seeder
      */
     public function run()
     {
-        //
+ 		foreach (User::all() as $user){
+ 			Coletor::factory(2)->create([
+ 				'user_id' => $user->id
+ 			]);
+ 		}       
     }
 }
