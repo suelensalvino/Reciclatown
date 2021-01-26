@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\produto_descarte;
+use App\Models\ProdutoDescarte;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProdutoDescarteFactory extends Factory
@@ -22,7 +22,8 @@ class ProdutoDescarteFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'categoria' => $this->faker->word,
+            'data' => $this->faker->date
         ];
     }
 }
