@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgendamentoDescartesTable extends Migration
+class CreateAgendamentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAgendamentoDescartesTable extends Migration
      */
     public function up()
     {
-        Schema::create('agendamento_descartes', function (Blueprint $table) {
+        Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
             $table->time('horario');
             $table->string('local');
             $table->integer('coletors_id');
-            $table->integer('descarte_usuarios_id');
+            $table->integer('produtos_id');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateAgendamentoDescartesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agendamento_descartes');
+        Schema::dropIfExists('agendamentos');
     }
 }

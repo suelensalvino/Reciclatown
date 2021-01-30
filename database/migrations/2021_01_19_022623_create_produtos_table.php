@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDescarteUsuariosTable extends Migration
+class CreateProdutosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateDescarteUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('descarte_usuarios', function (Blueprint $table) {
+        Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->integer('quantidade');
             $table->integer('user_id');
-            $table->integer('produto_descartes_id');
+            $table->integer('categorias_id');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateDescarteUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario_produto_descartes');
+        Schema::dropIfExists('produtos');
     }
 }
