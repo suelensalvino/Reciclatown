@@ -5,9 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProdutoDescarte extends Model
+class Categoria extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+    	
+    	'tipo',
+
+    ];
 
     public function users(){
 
@@ -15,9 +21,9 @@ class ProdutoDescarte extends Model
     	
     }
 
-    public function descarteUsuarios(){
+    public function produtos(){
 
-    	return $this->hasMany(DescarteUsuario::class);
+    	return $this->hasMany(Produto::class);
  
     }
 }
