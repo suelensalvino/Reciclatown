@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DescarteUsuario extends Model
+class Produto extends Model
 {
     use HasFactory;
 
@@ -15,15 +15,15 @@ class DescarteUsuario extends Model
 
     }
 
-    public function produtoDescartes(){
+    public function categorias(){
 
-    	return $this->belongsTo(ProdutoDescarte::class);
+    	return $this->belongsTo(Categoria::class);
 
     }
 
-    public function agendamentoDescartes(){
+    public function agendamentos(){
 
-    	return $this->hasOne(AgendamentoDescarte::class);
+    	return $this->hasOne(Agendamento::class);
     
     }
 }
