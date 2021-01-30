@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\ProdutoDescarte;
+use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProdutoDescarteFactory extends Factory
+class CategoriaFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = ProdutoDescarte::class;
+    protected $model = Categoria::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,7 @@ class ProdutoDescarteFactory extends Factory
     public function definition()
     {
         return [
-            'categoria' => $this->faker->word,
-            'data' => $this->faker->date
+            //
         ];
     }
 }
