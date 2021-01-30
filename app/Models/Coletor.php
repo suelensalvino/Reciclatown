@@ -15,9 +15,9 @@ class Coletor extends Model
 
     }
 
-    public function agendamentoDescartes(){
+    public function agendamentos(){
 
-    	return $this->hasMany(AgendamentoDescarte::class);
+    	return $this->hasMany(Agendamento::class);
 
     }
 }

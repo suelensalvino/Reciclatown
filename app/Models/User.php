@@ -49,14 +49,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function produtoDescartes(){
+    public function categorias(){
 
-        return $this->hasMany(ProdutoDescarte::class);
+        return $this->hasMany(Categoria::class);
     }
 
-    public function descarteUsuarios(){
+    public function produtos(){
 
-        return $this->hasMany(DescarteUsuario::class);
+        return $this->hasMany(Produto::class);
 
     }
 
