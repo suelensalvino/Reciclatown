@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AgendamentoDescarte extends Model
+class Agendamento extends Model
 {
     use HasFactory;
 
-    public function descarteUsuarios(){
+    public function produtos(){
 
-    	return $this->belongsTo(DescarteUsuario::class);
+    	return $this->belongsTo(Produto::class);
    
     }
 
