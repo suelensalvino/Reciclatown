@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\produto_descarte;
+use App\Models\Agendamento;
 use Illuminate\Http\Request;
 
-class ProdutoDescarteController extends Controller
+class AgendamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ProdutoDescarteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\produto_descarte  $produto_descarte
+     * @param  \App\Models\Agendamento  $agendamento
      * @return \Illuminate\Http\Response
      */
-    public function show(produto_descarte $produto_descarte)
+    public function show(Agendamento $agendamento)
     {
         //
     }
@@ -52,10 +52,10 @@ class ProdutoDescarteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\produto_descarte  $produto_descarte
+     * @param  \App\Models\Agendamento  $agendamento
      * @return \Illuminate\Http\Response
      */
-    public function edit(produto_descarte $produto_descarte)
+    public function edit(Agendamento $agendamento)
     {
         //
     }
@@ -64,10 +64,10 @@ class ProdutoDescarteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\produto_descarte  $produto_descarte
+     * @param  \App\Models\Agendamento  $agendamento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, produto_descarte $produto_descarte)
+    public function update(Request $request, Agendamento $agendamento)
     {
         //
     }
@@ -75,10 +75,10 @@ class ProdutoDescarteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\produto_descarte  $produto_descarte
+     * @param  \App\Models\agendamento  $agendamento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(produto_descarte $produto_descarte)
+    public function destroy(Agendamento $agendamento)
     {
         //
     }

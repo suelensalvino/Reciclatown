@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\usuario_produto_descarte;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
-class UsuarioProdutoDescarteController extends Controller
+class ProdutoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class UsuarioProdutoDescarteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\usuario_produto_descarte  $usuario_produto_descarte
+     * @param  \App\Models\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function show(usuario_produto_descarte $usuario_produto_descarte)
+    public function show(Produto $produto)
     {
         //
     }
@@ -52,10 +52,10 @@ class UsuarioProdutoDescarteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\usuario_produto_descarte  $usuario_produto_descarte
+     * @param  \App\Models\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function edit(usuario_produto_descarte $usuario_produto_descarte)
+    public function edit(Produto $produto)
     {
         //
     }
@@ -64,10 +64,10 @@ class UsuarioProdutoDescarteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\usuario_produto_descarte  $usuario_produto_descarte
+     * @param  \App\Models\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, usuario_produto_descarte $usuario_produto_descarte)
+    public function update(Request $request, Produto $produto)
     {
         //
     }
@@ -75,10 +75,10 @@ class UsuarioProdutoDescarteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\usuario_produto_descarte  $usuario_produto_descarte
+     * @param  \App\Models\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(usuario_produto_descarte $usuario_produto_descarte)
+    public function destroy(Produto $produto)
     {
         //
     }
