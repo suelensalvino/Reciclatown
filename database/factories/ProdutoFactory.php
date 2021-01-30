@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\DescarteUsuario;
+use App\Models\Produto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class DescarteUsuarioFactory extends Factory
+class ProdutoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = DescarteUsuario::class;
+    protected $model = Produto::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,7 @@ class DescarteUsuarioFactory extends Factory
     public function definition()
     {
         return [
-            'quantidade' => $this->faker->randomNumber(2,false),
+            'quantidade' => $this->faker->randomNumber,
         ];
     }
 }
