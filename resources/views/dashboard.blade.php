@@ -12,10 +12,12 @@
                   <!---listanto os produtos de descarte do usuário--->
 
                   <div class="grid grid-cols-4"> 
-                       @foreach(Auth::user()->ProdutoDescartes as $categoria)
-                            @foreach(Auth::user()->DescarteUsuarios as $produto)
+                       @foreach(Auth::user()->Categorias as $categoria)
+                            @foreach(Auth::user()->Produtos as $produto)
                             <div class="p-3 m-1 border rounded-lg hover:bg-gray-200 ">
-                               Categoria: {{$categoria->categoria}} (quantidade disponivel)  {{ $produto->quantidade}}
+                               Produto: {{$categoria->tipo}}  
+                               <br>
+                               Quantidade disponível: {{ $produto->quantidade}}
                             </div>
                             @endforeach
                       @endforeach
