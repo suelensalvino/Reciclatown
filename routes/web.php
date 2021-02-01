@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\ProdutoController;
+use App\Models\Produto;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +23,8 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::model('produto', Produto::class);
+Route::get('/produtos/remover/{produto}', [ProdutoController::class, 'destroy'])->name('rm-produto');
 
 require __DIR__.'/auth.php';
