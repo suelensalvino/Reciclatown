@@ -27,4 +27,7 @@ Route::get('/dashboard', function () {
 Route::model('produto', Produto::class);
 Route::get('/produtos/remover/{produto}', [ProdutoController::class, 'destroy'])->name('rm-produto');
 
+Route::post('/novo/produto', [ProdutoController::class, 'store'])->name('novo_produto');
+
+
 require __DIR__.'/auth.php';

@@ -12,6 +12,7 @@ class Categoria extends Model
     protected $fillable = [
     	
     	'tipo',
+        'user_id'
 
     ];
 

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use App\Models\Categoria;
+use App\Http\Controllers\CategoriaController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 
 class ProdutoController extends Controller
 {
@@ -35,7 +39,29 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+          $cat_id = $request->categoria_id;
+          foreach (Auth::user()->Categorias as $categoria) {
+        if ($request->categoria_id == 0) {
+         $categoria = Categoria::create([
+         'tipo' => $categoria->tipo,
+          'user_id' => Auth::user()->id
+         ]);
+        }
+        else{
+              $categoria = Categoria::create([
+         'tipo' => $categoria->tipos,
+          'user_id' => Auth::user()->id
+         ]);
+         }
+    }
+          $cat_id = $categoria->id;
+        Produto::create([
+         'quantidade'=> $request->quantidade,
+         'user_id' => Auth::user()->id,
+         'categorias_id' => $cat_id,
+       ]);
+         return redirect('dashboard');
     }
 
     /**
