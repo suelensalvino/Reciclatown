@@ -12,26 +12,27 @@ class Produto extends Model
     protected $fillable = [
         
         'quantidade',
+        'descricao',
         'categorias_id',
         'user_id',
 
     ];
 
-    public function users(){
+    public function user(){
 
-    	return $this->belongsTo(User::class);
-
-    }
-
-    public function categorias(){
-
-    	return $this->belongsTo(Categoria::class);
+        return $this->belongsTo(User::class, 'user_id');
 
     }
 
-    public function agendamentos(){
+    public function categoria(){
 
-    	return $this->hasOne(Agendamento::class);
+        return $this->belongsTo(Categoria::class, 'categorias_id');
+
+    }
+
+    public function agendamento(){
+
+        return $this->hasOne(Agendamento::class);
     
     }
 }
