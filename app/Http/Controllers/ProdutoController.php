@@ -38,31 +38,24 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
-          $cat_id = $request->categoria_id;
-          foreach (Auth::user()->Categorias as $categoria) {
-        if ($request->categoria_id == 0) {
-         $categoria = Categoria::create([
-         'tipo' => $categoria->tipo,
-          'user_id' => Auth::user()->id
-         ]);
-        }
-        else{
-              $categoria = Categoria::create([
-         'tipo' => $categoria->tipos,
-          'user_id' => Auth::user()->id
-         ]);
-         }
+ {
+         $cat_id = $request->categoria;
+         var_dump($request->categoria);
+    if ($request->categoria == 0) {
+      $categoria = Categoria::create([
+        'tipo' => $request->categoria,
+        'user_id' => Auth::user()->id
+      ]);
+      $cat_id = $request->categoria;
     }
-          $cat_id = $categoria->id;
-        Produto::create([
-         'quantidade'=> $request->quantidade,
-         'user_id' => Auth::user()->id,
-         'categorias_id' => $cat_id,
-       ]);
+    Produto::create([
+      'quantidade' => $request->quantidade,
+      'descricao' => $request->descricao, 
+      'categorias_id' => $cat_id,
+      'user_id' => Auth::user()->id
+        ]);
          return redirect('dashboard');
-    }
+     }
 
     /**
      * Display the specified resource.

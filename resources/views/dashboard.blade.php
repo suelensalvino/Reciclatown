@@ -15,11 +15,12 @@
             <div class="p-3 m-0.5 border rounded-lg bg-blue-100 hover:bg-blue-200 cursor-pointer" @click="add_modal = true">
                 Adicionar
              </div>
-           @foreach(Auth::user()->Categorias as $categoria)
            @foreach(Auth::user()->Produtos as $produto)
            
            <div class="p-3 m-1 border rounded-lg hover:bg-gray-200 ">
-             Produto: {{$categoria->tipo}}  
+             Produto: {{$produto->categoria->tipo}}  
+             <br>
+             Descrição: {{$produto->descricao}}  
              <br>
              Quantidade disponível: {{ $produto->quantidade}}
              
@@ -27,14 +28,13 @@
 
               <div class="grid grid-cols text-center">
 
-                <a class="bg-red 200 rounded-lg hover:bg-red-300" href="{{route('rm-produto', $categoria, $produto)}}">Excluir</a>
+                <a class="bg-red 200 rounded-lg hover:bg-red-300" href="{{route('rm-produto', $produto)}}">Excluir</a>
 
               </div>
 
             </div>
           </div>
 
-          @endforeach
           @endforeach
 
         </div>
@@ -67,13 +67,13 @@
            <form action="{{route('novo_produto')}}" method="POST">
              @csrf
                <!-- tipo_produto -->
-            <div class="mt-4" >
+            <div class="mt-4" x-data="{outro: 1}" >
                 <x-label for="tipo_produto" :value="__('Categoria')" />
-                <x-select id="tipo_produto" class="block mt-1 w-full" type="text" name="tipo_produto" :value="old('tipo_produto')" required >
+                <x-select id="tipo_produto" class="block mt-1 w-full" type="text" name="categoria" :value="old('tipo_produto')" required x-modal="" >
                 @foreach(Auth::user()->categorias as $categoria)
-                  <option class="block mt-1 w-full"  value="{{$categoria->tipo}}">{{$categoria->tipo}}</option>
+                  <option class="block mt-1 w-full"  value="{{$categoria->id}}">{{$categoria->tipo}}</option>
                 @endforeach
-                <option class="block mt-1 w-full" value="outro">outro</option>
+                <option class="block mt-1 w-full" value="0">outro</option>
               </x-select>
 
             </div>
@@ -82,6 +82,12 @@
                 <x-label for="quantidade" :value="__('Quantidade')" />
 
                 <x-input id="quantidade" class="block mt-1 w-full" type="number" name="quantidade" :value="old('quantidade')" min="1" required />
+            </div>
+             <!-- descricao -->
+            <div class="mt-4">
+                <x-label for="descricao" :value="__('Descricão')" />
+
+                <x-input id="descricao" class="block mt-1 w-full" type="text" name="descricao" :value="old('descricao')" min="1" />
             </div>
              <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-red-500 hover:text-red-500 cursor-pointer" @click="add_modal = false"   >
