@@ -13,6 +13,10 @@ module.exports = {
                'display': ['Oswald', ...],
                'body': ['Open Sans', ...],
             },
+
+            color: {
+               primary: '#050259',
+            }
         },
     },
 

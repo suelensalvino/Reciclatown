@@ -4,47 +4,64 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-
+        <title>Reciclatown</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
         <link rel="stylesheet" href="../css/app.css">
 
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+    <body class="">  
+      <!-- This example requires Tailwind CSS v2.0+ -->
+      <div class="overflow-hidden">
+        <div class="bg-contain">
+          <div class="relative z-10 pb-8 bg-white sm:pb-16 lg:max-w-2xl lg:w-screen lg:pb-28 h-screen">
+            <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <polygon points="50,0 100,0 50,100 0,100" />
+            </svg>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="bg-auto bg-no-repeat bg-right md:min-h-screen" style="background-image: url(../img/bg.jpg)">
-            <div class="grid grid-cols-1 lg:grid-cols-2">
-                <div class=" bg-blue-900 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12">
-                    <div class="flex-grow">
-                        <h2 class="text-left text-red-400 text-2xl font-display ">Logo</h2>
-                        <h1 class="whitespace-pre-line text-left text-red-400 text-4xl font-display">
-                            Reciclatown é um serviço online <br> de descarte e coleta de lixo eletrônico
-                        </h1>
-                        <p class="whitespace-pre-line flex-white text-left text-white text-2xl font-display">
-                            Nosso intuíto é fazer da tecnologia nossa aliada <br> na sustentabilidade
-                        </p>
-                        <li class="flex rounded-lg m-10 px-40 ">
-                            <a href="/dashboard" class=" flex items-center justify-center bg-transparent text-red-400 text-2xl px-8 py-4 hover:border-red-400  border-2 ">Saiba Mais</a>
-                        </li>
+            <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+              <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+                <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                  <div class="flex items-center justify-between w-full md:w-auto">
+                    <a href="#">
+                      <span class="sr-only">Workflow</span>
+                      <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg">
+                    </a>
+                    <div class="-mr-2 flex items-center md:hidden">
+                      <a href="dashboard" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-blue-900 text-4x1 hover:text-red-400  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
+                        Acessar
+                      </a>
                     </div>
+                  </div>
                 </div>
+                <div class="hidden font-display md:block md:ml-10 md:pr-4 md:space-x-8">
+                  <a href="dashboard" class="font-display text-4x1 text-blue-900 hover:text-red-400">Acessar</a>
+                </div>
+              </nav>
             </div>
+            <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+              <div class="sm:text-center lg:text-left">
+                <h1 class="text-4xl tracking-tight font-display text-gray-900 sm:text-4xl md:text-5xl">
+                  <span class="block text-red-400 font-display xl:inline">Reciclatown</span>
+                  <span class="block text-blue-900 font-display xl:inline"> é um serviço on-line de descarte e coleta de lixo eletrônico</span>
+                </h1>
+                <p class="mt-3 text-base text-blue-900 font-display sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                 Nosso intuito é fazer da tecnologia nossa aliada a sustentabilidade.
+                </p>
+                <div class="mt-5 sm:mt-8 sm:flex sm:justify-center ">
+                  <div class="rounded-md shadow">
+                    <a href="register" class=" flex items-center justify-center px-8 py-3 border border-transparent text-base font-display rounded-md text-white bg-blue-900 hover:bg-red-400 md:py-4 md:text-lg md:px-10">
+                      Saiba mais
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
         </div>
+        <div class="bg-blue-900 lg:absolute lg:inset-y-0 lg:right-0 lg:w-2/3">
+          <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
+        </div>
+      </div>
     </body>
 </html>
