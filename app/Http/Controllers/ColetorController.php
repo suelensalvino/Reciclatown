@@ -35,7 +35,10 @@ class ColetorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $request->validate([
+            'perfil' =>'required',
+            'telefone' => 'required|number|min:11|max:16'
+        ]);
     }
 
     /**

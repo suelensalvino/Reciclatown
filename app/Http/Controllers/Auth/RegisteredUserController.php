@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Coletor;
+use App\Http\Controllers\ColetorController;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -45,7 +47,7 @@ class RegisteredUserController extends Controller
             'logradouro' => 'required|max:3|min:3',
             'complemento' => 'required',
         ]);
-
+        if ($request->tipo == 'usuario' || '' ) {
         Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -59,9 +61,31 @@ class RegisteredUserController extends Controller
             'logradouro'=> $request->logradouro,
             'complemento' => $request->complemento,
         ]));
-
+         event(new Registered($user));
+        }
+        else if ($request->tipo == 'coletor') {
+            Auth::login($user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'nascimento' => $request->nascimento,
+            'tipo'=> $request->tipo,
+            'uf'=> $request->uf,
+            'cidade' => $request->cidade,
+            'bairro' => $request->bairro,
+            'cep' => $request->cep,
+            'logradouro'=> $request->logradouro,
+            'complemento' => $request->complemento,
+        ]));
         event(new Registered($user));
+            coletor::create([
+                'perfil' => $request->perfil,
+                'telefone' => $request->telefone,
+                'user_id' => Auth::user()->id
+            ]);
+        }
 
+        var_dump($request->tipo);
         return redirect(RouteServiceProvider::HOME);
     }
 }
