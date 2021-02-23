@@ -40,26 +40,26 @@ class ProdutoController extends Controller
     public function store(Request $request)
  {
     if ($request->categoria == 0) {
-      $categoria = Categoria::create([
-        'tipo' => $request->cate_outra,
-        'user_id' => Auth::user()->id
-      ]);
-         Produto::create([
-      'quantidade' => $request->quantidade,
-      'descricao' => $request->descricao, 
-      'categorias_id' => $categoria->id,
-      'user_id' => Auth::user()->id
-        ]);
+            $categoria = Categoria::create([
+            'tipo' => $request->cate_outra,
+            'user_id' => Auth::user()->id
+    ]);
+        Produto::create([
+            'quantidade' => $request->quantidade,
+            'descricao' => $request->descricao, 
+            'categorias_id' => $categoria->id,
+            'user_id' => Auth::user()->id
+    ]);
          return redirect('dashboard');
     }
-    Produto::create([
-      'quantidade' => $request->quantidade,
-      'descricao' => $request->descricao, 
-      'categorias_id' => $request->categoria,
-      'user_id' => Auth::user()->id
-        ]);
+        Produto::create([
+            'quantidade' => $request->quantidade,
+            'descricao' => $request->descricao, 
+            'categorias_id' => $request->categoria,
+            'user_id' => Auth::user()->id
+    ]);
          return redirect('dashboard');
-     }
+}
 
     /**
      * Display the specified resource.
@@ -80,7 +80,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        return view('proedit',['produto'=>$produto]);
     }
 
     /**
@@ -92,7 +92,11 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        $produto->update([
+            'quantidade' => $request->quantidade,
+            'descricao' => $request->descricao, 
+        ]);
+         return redirect('dashboard');
     }
 
     /**

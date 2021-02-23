@@ -29,9 +29,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::model('produto', Produto::class);
-Route::get('/produtos/remover/{produto}', [ProdutoController::class, 'destroy'])->name('rm-produto');
 
-Route::post('/novo/produto', [ProdutoController::class, 'store'])->name('novo_produto');
+Route::get('/produtos/remover/{produto}', [ProdutoController::class, 'destroy'])
+->name('rm-produto');
+
+Route::post('/novo/produto', [ProdutoController::class, 'store'])
+->name('novo_produto');
+
+Route::get('/produto/{produto}/edit', [ProdutoController::class, 'edit'])
+->name('edit-produto')
+->middleware('auth');
+
+Route::put('/produto/{produto}/update', [ProdutoController::class, 'update'])
+->name('update-produto')
+->middleware('auth');
 
 
 require __DIR__.'/auth.php';
