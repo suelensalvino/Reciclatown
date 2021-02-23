@@ -25,11 +25,11 @@
                                     <div class="rounded-md shadow-sm -space-y-px">
                                         <div>
                                           <label for="email" :value="__('Email')" />
-                                          <input id="email" class="mb-8 bg-transparent block mt-1 w-full border-0 border-red-400 border-b-2 border-red-400 appearance-none rounded-none relative block w-full px-3 py-2 placeholder-red-400 text-red-400 rounded-sm text-xl focus:outline-none focus:ring-red-500 focus:border-opacity-0" type="email" name="email" :value="old('email')" placeholder="Email" required autofocus />
+                                          <input id="email" class="mb-8 bg-transparent block mt-1 w-full border-0 border-red-400 border-b-2 border-red-400 appearance-none rounded-none relative block w-full px-3 py-2 placeholder-red-400 text-red-400 rounded-sm text-xl focus:outline-none focus:ring-red-500 focus:border-opacity-0" type="email" name="email" :value="old('email')" placeholder="E-mail" required autofocus />
                                         </div>
                                         <div>
                                           <label  for="password" :value="__('Password')" />
-                                          <input id="password" class="mb-8 bg-transparent block mt-1 w-full border-0 border-red-400 border-b-2 border-red-400 appearance-none rounded-none relative block w-full px-3 py-2 placeholder-red-400 text-red-400 rounded-sm text-xl focus:outline-none focus:ring-red-500 focus:border-opacity-0" name="password" type="password" autocomplete="current-password" required autocomplete="current-password" required class="block mt-1 w-full"  placeholder="Password"/>
+                                          <input id="password" class="mb-8 bg-transparent block mt-1 w-full border-0 border-red-400 border-b-2 border-red-400 appearance-none rounded-none relative block w-full px-3 py-2 placeholder-red-400 text-red-400 rounded-sm text-xl focus:outline-none focus:ring-red-500 focus:border-opacity-0" name="password" type="password" autocomplete="current-password" required autocomplete="current-password" required class="block mt-1 w-full"  placeholder="Senha"/>
                                         </div>
                                     </div>          
 
@@ -37,7 +37,7 @@
                                         <div class="flex items-center">
                                           <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 bg-transparent text-red-400 focus:ring-red-500 border-red-400 rounded">
                                           <label for="remember_me" class="ml-2 block text-sm text-red-400">
-                                             <span>{{ __('Remember me') }}</span>
+                                             <span>{{ __('Lembre-me') }}</span>
                                          </label>
                                         </div>  
                                         <div class="text-sm">
@@ -45,7 +45,7 @@
                                             <a class="underline text-sm text-red-400 hover:text-white" href="{{ route('password.request') }}">
                                             {{ __('Esqueceu a senha?') }}
                                             </a>
-                                            @endif
+                                          @endif
                                         </div>
                                     </div>          
 
