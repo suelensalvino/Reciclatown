@@ -44,5 +44,10 @@ Route::put('/produto/{produto}/update', [ProdutoController::class, 'update'])
 ->name('update-produto')
 ->middleware('auth');
 
+Route::get('/perfil/{user}', function(){
+
+	return view('perfil');
+
+})->middleware(['auth'])->name('perfil');
 
 require __DIR__.'/auth.php';
