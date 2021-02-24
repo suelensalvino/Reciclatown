@@ -38,6 +38,17 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
+                            @php
+                                $usuario = DB::table('users')->where('id', Auth::user()->id)->get();
+                                @endphp
+                            @foreach($usuario as $user)                            
+
+                                <x-dropdown-link href="{{route('perfil', $user->id)}}">
+                                    {{ __('Meu perfil') }}
+
+                                </x-dropdown-link>
+                            @endforeach
+
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
