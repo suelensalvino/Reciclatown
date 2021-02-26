@@ -19,7 +19,7 @@
     <!-- verificando se o usuario logado é um usuario-->
     @elseif($coletor !=="coletor")
     <div>
-      <h1 class="block text-center text-xl pb-4">Seus Produtos Para Descarte</h1>
+      <h1 class="block text-center text-xl pb-4">Seus produtos para descarte</h1>
         @include('produto')
     </div> 
 
