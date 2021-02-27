@@ -54,7 +54,7 @@
         From: "opacity-100 translate-y-0 sm:scale-100"
         To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     -->
-    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full p-3" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+   <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full p-3" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
       <div >   
         <h1 class="text-center">Se Comprometer a esse Produto</h1>
            <div class="flex items-center justify-center mt-4 p-4">
@@ -62,16 +62,9 @@
                     <a class="underline text-sm text-red-500 hover:text-red-500 cursor-pointer mr-4" @click="agenda = false"   >
                         {{ __('Cancelar') }}
                     </a>
-                       @php
-                      
-                      $coletores = DB::table('coletors')->where('id', Auth::user()->id )->get()
-                    @endphp 
-           
-             @foreach($coletores as $coletor)
-                  
-                    <a class="text-sm text-white bg-blue-400 rounded-lg cursor-pointer h-8 w-15 text-center pt-1.5"  href="{{}}"   >Agendar </a>
+                    <a class="text-sm text-white bg-blue-400 rounded-lg cursor-pointer h-8 w-15 text-center pt-1.5"  href="{{route('update-agendamento', $agendamento->id)}}">Agendar </a>
           
-                    @endforeach
+              
             </div>
       </div>
     </div>

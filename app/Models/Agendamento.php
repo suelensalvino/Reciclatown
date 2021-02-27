@@ -9,6 +9,13 @@ class Agendamento extends Model
 {
     use HasFactory;
 
+      protected $fillable = [
+        'horario',
+        'local',
+        'coletors_id',
+        'produtos_id'
+    ];
+
     public function produtos(){
 
     	return $this->belongsTo(Produto::class);

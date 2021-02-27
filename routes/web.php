@@ -1,8 +1,10 @@
 <?php
-
+ 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProdutoController;
+use \App\Http\Controllers\AgendamentoController;
 use App\Models\Produto;
+use App\Models\Agendamento;
 
 
 /*
@@ -42,6 +44,10 @@ Route::get('/produto/{produto}/edit', [ProdutoController::class, 'edit'])
 
 Route::put('/produto/{produto}/update', [ProdutoController::class, 'update'])
 ->name('update-produto')
+->middleware('auth');
+
+Route::any('/agendamento/{agendamento}/update', [AgendamentoController::class, 'update'])
+->name('update-agendamento')
 ->middleware('auth');
 
 Route::get('/perfil/{user}', function(){

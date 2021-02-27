@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agendamento;
+use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
+use LaravelLegends\EloquentFilter\Filter;
+
 
 class AgendamentoController extends Controller
 {
@@ -14,7 +19,7 @@ class AgendamentoController extends Controller
      */
     public function index()
     {
-        //
+ 
     }
 
     /**
@@ -35,7 +40,13 @@ class AgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+   
+         $agendamento = Agendamento::create([
+            'horario' => $request->horario,
+            'local'=> $request->local,
+            'produtos_id' => $request->produtos
+         ]);
+  return redirect('dashboard');
     }
 
     /**
@@ -57,7 +68,7 @@ class AgendamentoController extends Controller
      */
     public function edit(Agendamento $agendamento)
     {
-        //
+       //
     }
 
     /**
@@ -69,7 +80,12 @@ class AgendamentoController extends Controller
      */
     public function update(Request $request, Agendamento $agendamento)
     {
-        //
+
+        $agendamento->update([
+            'coletors_id' => Auth::user()->id,
+           
+        ]);
+       return redirect('dashboard');
     }
 
     /**
@@ -82,4 +98,5 @@ class AgendamentoController extends Controller
     {
         //
     }
+  
 }
