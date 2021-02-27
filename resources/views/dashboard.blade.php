@@ -13,9 +13,10 @@
     @endphp
    <!-- verificando se o usuario logado é um coletor-->
     @if($coletor === "coletor")
-    <div>
-       a<!-- aqui ficara o include do coletor-->
-    </div>
+    
+       <!-- aqui ficara o include do coletor-->
+       @include('confirma-agendamento')
+  
     <!-- verificando se o usuario logado é um usuario-->
     @elseif($coletor !=="coletor")
     <div>
