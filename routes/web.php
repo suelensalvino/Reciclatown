@@ -38,6 +38,8 @@ Route::get('/produtos/remover/{produto}', [ProdutoController::class, 'destroy'])
 Route::post('/novo/produto', [ProdutoController::class, 'store'])
 ->name('novo_produto');
 
+Route::post('/novo/agendamento', [AgendamentoController::class, 'store'])->name('novo_agendamento');
+
 Route::get('/produto/{produto}/edit', [ProdutoController::class, 'edit'])
 ->name('edit-produto')
 ->middleware('auth');
