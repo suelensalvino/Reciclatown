@@ -17,7 +17,7 @@ class CreateAgendamentosTable extends Migration
             $table->id();
             $table->time('horario');
             $table->string('local');
-            $table->integer('coletors_id');
+            $table->integer('coletors_id')->nullable();
             $table->integer('produtos_id');
             $table->timestamps();
         });

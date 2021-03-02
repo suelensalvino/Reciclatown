@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Coletor;
 use App\Models\Produto;
 use App\Models\Agendamento;
 use Illuminate\Database\Seeder;
@@ -16,13 +15,10 @@ class AgendamentoSeeder extends Seeder
      */
     public function run()
     {
-        foreach (Coletor::all() as $coletor) {
-        	foreach (Produto::all() as $produto) {
-   				Agendamento::factory(1)->create([
-   					'coletors_id' => $coletor->id,
-   					'produtos_id' => $produto->id,
-   			]);     		
-      }
+        foreach (Produto::all() as $produto) {
+   			Agendamento::factory(1)->create([
+   				'produtos_id' => $produto->id,
+   		]);     		
     }
   }
 }
