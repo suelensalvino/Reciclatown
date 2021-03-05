@@ -22,8 +22,79 @@
              	Horario: {{$agendamento->horario}}
             	<br>
             	Local: {{$agendamento->local}}
+            <div x-data="{modal_editar: false}">
+
+            <div class="p-3 m-0.5 border rounded-lg bg-blue-200 hover:bg-blue-300 cursor-pointer text-center" @click="modal_editar = true">Editar</div>
+
+            <!-- Modal edit -->
+            <div class="fixed z-10 inset-0 overflow-y-auto" style="display: none;" x-show="modal_editar">
+              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div class="fixed inset-0 transition-opacity" aria-hidden="true" @click="modal_editar = false">
+                  <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full p-3" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                  <div>
+                    <form action="{{ route('update-agendamento', $agendamento->id) }}" method="POST">
+                      @csrf
+                      @method('PUT')
+                      <div class="m-3">
+                        <x-label for="horario" :value="__('Horário')" />
+
+                        <x-input id="horario" class="block mt-1 w-full" type="time" name="horario" :value="old('horario')" required/>
+                      </div>
+                      <div class="m-3">
+                        <x-label for="local" :value="__('Local')" />
+
+                        <x-input id="local" class="block mt-1 w-full" type="text" name="local" :value="old('local')" required/>
+                      </div>
+
+                      <div class="flex items-center justify-end mt-4">
+
+                        <div class="flex items-center justify-center mt-4">
+
+                          <a href="http://localhost:8000/dashboard" class="no-underline">
+                            {{ __('Cancelar') }}
+                          </a>
+
+                          <x-button class="ml-4">
+                            {{ __('Confirmar') }}
+                          </x-button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+             <div x-data ="{modal_excluir: false }">
+            <div class="p-3 m-0.5 border rounded-lg bg-red-200 hover:bg-red-300 cursor-pointer text-center" @click="modal_excluir = true">Excluir</div>
+
+            <!-- Modal delete -->
+            <div class="fixed z-10 inset-0 overflow-y-auto" style="display: none;" x-show="modal_excluir">
+              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div class="fixed inset-0 transition-opacity" aria-hidden="true" @click="modal_excluir = false">
+                  <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full p-3" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                  <div>
+                    <h1 class="text-center">Deseja realmente excluir este produto?</h1>
+                    <div class="flex items-center justify-center mt-4 p-4">
+                      <a class="underline text-sm text-red-500 hover:text-red-500 cursor-pointer mr-4" @click="modal_excluir = false">
+                        {{ __('Não, cancelar') }}
+                      </a>
+                      <a class="underline text-sm text-green-500 hover:text-red-500 cursor-pointer mr-4" href="{{route('rm-agendamento', $agendamento->id)}}">Sim, excluir</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
              </div>
-             		@endforeach
+
+             	@endforeach
              	@endforeach
 			</div>
 		</div>

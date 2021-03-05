@@ -41,12 +41,13 @@ class AgendamentoController extends Controller
     public function store(Request $request)
     {
    
-         $agendamento = Agendamento::create([
+        $agendamento = Agendamento::create([
             'horario' => $request->horario,
             'local'=> $request->local,
             'produtos_id' => $request->produtos
          ]);
-  return redirect('dashboard');
+
+            return redirect('dashboard');
     }
 
     /**
@@ -80,12 +81,11 @@ class AgendamentoController extends Controller
      */
     public function update(Request $request, Agendamento $agendamento)
     {
-
         $agendamento->update([
-            'coletors_id' => Auth::user()->id,
-           
+            'horario' => $request->horario,
+            'local' => $request->local, 
         ]);
-       return redirect('dashboard');
+            return redirect('dashboard');
     }
 
     /**
@@ -96,7 +96,8 @@ class AgendamentoController extends Controller
      */
     public function destroy(Agendamento $agendamento)
     {
-        //
+        $agendamento->delete();
+        
+            return redirect('dashboard');
     }
-  
 }
