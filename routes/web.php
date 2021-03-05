@@ -19,7 +19,9 @@ use App\Models\Agendamento;
 */
 
 Route::get('/', function () {
+    
     return view('welcome');
+
 });
 
 Route::get('/home', function () {
@@ -32,23 +34,27 @@ Route::get('/dashboard', function () {
 
 Route::model('produto', Produto::class);
 
-Route::get('/produtos/remover/{produto}', [ProdutoController::class, 'destroy'])
-->name('rm-produto');
+Route::model('agendamento', Agendamento::class);
 
 Route::post('/novo/produto', [ProdutoController::class, 'store'])
 ->name('novo_produto');
 
-Route::post('/novo/agendamento', [AgendamentoController::class, 'store'])->name('novo_agendamento');
-
-Route::get('/produto/{produto}/edit', [ProdutoController::class, 'edit'])
-->name('edit-produto')
-->middleware('auth');
+Route::get('/produtos/remover/{produto}', [ProdutoController::class, 'destroy'])
+->name('rm-produto');
 
 Route::put('/produto/{produto}/update', [ProdutoController::class, 'update'])
 ->name('update-produto')
 ->middleware('auth');
 
-Route::any('/agendamento/{agendamento}/update', [AgendamentoController::class, 'update'])
+Route::post('/novo/agendamento', [AgendamentoController::class, 'store'])
+->name('novo_agendamento')
+->middleware('auth');
+
+Route::get('/agendamentos/remover/{agendamento}', [AgendamentoController::class, 'destroy'])
+->name('rm-agendamento')
+->middleware('auth');
+
+Route::put('/agendamentos/{agendamento}/update', [AgendamentoController::class, 'update'])
 ->name('update-agendamento')
 ->middleware('auth');
 
