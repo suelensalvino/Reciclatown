@@ -1,32 +1,31 @@
 <x-app-layout>
+  
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Dashboard') }}
+      {{ __('Meu perfil') }}
     </h2>
   </x-slot>
 
-  <div class="py-12" >
-
+  <div class="py-4" >
     @php 
     $coletor = Auth::user()->tipo;
- 
     @endphp
-   <!-- verificando se o usuario logado é um coletor-->
+
+    <!-- verificando se o usuario logado é um coletor-->
     @if($coletor === "coletor")
-    
-       <!-- aqui ficara o include do coletor-->
-       @include('confirma-agendamento')
-  
+      <div>
+        <!-- aqui ficara o include do coletor-->
+        @include('confirma-agendamento')
+      </div>
     <!-- verificando se o usuario logado é um usuario-->
     @elseif($coletor !=="coletor")
-    <div>
-      <h1 class="block text-center text-xl pb-4">Seus Produtos Para Descarte</h1>
+      <div>
         @include('produto')
-    </div> 
-        @include('agendamento')
-
-
+      </div> 
+      <div class="mt-8">
+       @include('agendamento')
+      </div>
     @endif
-  
-</div>
+  </div>
+
 </x-app-layout>
