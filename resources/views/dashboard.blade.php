@@ -22,9 +22,6 @@
       <div>
         @include('produto')
       </div> 
-      <div class="mt-8">
-       @include('agendamento')
-      </div>
     @endif
   </div>
 
