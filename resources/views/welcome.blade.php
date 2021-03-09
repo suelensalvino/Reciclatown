@@ -15,9 +15,8 @@
               <div class="flex items-center justify-between w-full md:w-auto">
                 <a href="#">
                   <span class="sr-only">Workflow</span>
-                  <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg">
+                  <img class="h-20 w-auto sm:h-20" src="../img/logo-a.png">
                 </a>
-                
             </div>
             <div class="hidden text-left font-display md:block md:ml-10 md:pr-4 md:space-x-8">
               <a href="dashboard" class="font-display sm:text-xl text-2x1 text-blue-900 hover:text-red-400">Acessar</a>

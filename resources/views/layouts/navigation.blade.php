@@ -5,15 +5,17 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-white" />
+                    <a href="{{ route('home') }}">
+                        <slot name="logo" >
+                            <img class="mx-auto h-12 w-auto" src="../img/logo-b.png" alt="#"/>
+                        </slot>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 text-white sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Home') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -43,7 +45,7 @@
                                 @endphp
                             @foreach($usuario as $user)                            
 
-                                <x-dropdown-link href="{{route('perfil', $user->id)}}">
+                                <x-dropdown-link href="{{route('dashboard', $user->id)}}">
                                     {{ __('Meu perfil') }}
 
                                 </x-dropdown-link>

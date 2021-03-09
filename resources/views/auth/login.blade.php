@@ -10,7 +10,7 @@
 
                   <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-transparent">
                     <slot name="logo" >
-                      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-white.svg" alt="Workflow"/>
+                      <img class="mx-auto h-20 w-auto" src="../img/logo-b.png" alt="Workflow"/>
                     </slot>
                         <!-- Session Status -->
                         <x-auth-session-status class="-mt-14" :status="session('status')" />    
