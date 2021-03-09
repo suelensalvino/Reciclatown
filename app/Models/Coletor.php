@@ -9,6 +9,12 @@ class Coletor extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+     'perfil',
+     'telefone',
+     'user_id'
+    ];
+
     public function users(){
 
     	return $this->belongsTo(User::class);

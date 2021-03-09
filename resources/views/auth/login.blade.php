@@ -52,5 +52,13 @@
                 </x-button>
             </div>
         </form>
+            <div class="mt-4 text-center" x-data= >
+                Não é Cadastrado? Faça Seu Cadastro
+            </div>
+            <div class="grid grid-cols-2 mt-1 ml-40">
+                <div class="text-center p-1 cursor-pointer p-1  border rounded-lg bg-blue-200 hover:bg-blue-300"> 
+                    <a href="register">Cadastro</a>
+                </div>
+            </div>
     </x-auth-card>
 </x-guest-layout>

@@ -6,10 +6,25 @@
   </x-slot>
 
   <div class="py-12" >
-     <div>
+
+    @php 
+    $coletor = Auth::user()->tipo;
+    
+    @endphp
+    <!-- verificando se o usuario logado é um coletor-->
+    @if($coletor === "coletor")
+    
+    @include('tabela-agendamento')<!-- aqui ficara o include do coletor-->
+    
+    <!-- verificando se o usuario logado é um usuario-->
+    @elseif($coletor !=="coletor")
+    <div>
       <h1 class="block text-center text-xl pb-4">Seus Produtos Para Descarte</h1>
-        @include('produto')
-      </div>
-   
-</div>
+      @include('produto')
+    </div> 
+    
+
+    @endif
+    
+  </div>
 </x-app-layout>

@@ -12,18 +12,11 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
+
             <div>
                 <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-
-             <!-- tipo -->
-            <div class="mt-4">
-                <x-label for="tipo" :value="__('Tipo')" />
-
-                <x-input id="tipo" class="block mt-1 w-full" type="text" name="tipo" :value="old('tipo')" required />
             </div>
 
                <!-- nascimento -->
@@ -83,6 +76,31 @@
                 <x-label for="logradouro" :value="__('Logradouro')" />
 
                 <x-input id="logradouro" class="block mt-1 w-full" type="text" name="logradouro" :value="old('logradouro')" required />
+            </div>
+
+            <!-- É coletor??????? -->
+                <h1 class="text-center mt-4 mb-4">Você é um(a)</h1>
+            <div class="" x-data ="{tipo_user : ''}">
+                 <x-label for="tipo" :value="__('tipo')" />
+                <x-select id="tipo" class="block mt-1 w-full" type="text" name="tipo"   required x-model="tipo_user" >
+                    <option class="block mt-1 w-full"  value="" >---------</option>
+                    <option class="block mt-1 w-full"  value="coletor" >Coletor(a)</option>
+                    <option class="block mt-1 w-full" value="usuario">Usuário</option>
+                    </x-select>
+            <template x-if="tipo_user == 'coletor'">
+                <div>
+                    <div class="mt-4">
+                    <x-label for="perfil" :value="__('perfil')" />
+
+                    <x-textarea id="perfil" class="block mt-1 w-full" type="text" name="perfil" :value="old('perfil')" required />
+                    </div>
+                       <div class="mt-4">
+                        <x-label for="telefone" :value="__('telefone')" />
+
+                        <x-input id="telefone" class="block mt-1 w-full" type="text" name="telefone" :value="old('telefone')" required />
+                    </div>
+                </div>
+            </template>
             </div>
             <!-- Password -->
             <div class="mt-4">

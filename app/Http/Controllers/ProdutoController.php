@@ -39,19 +39,24 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
  {
-         $cat_id = $request->categoria;
-         var_dump($request->categoria);
     if ($request->categoria == 0) {
       $categoria = Categoria::create([
-        'tipo' => $request->categoria,
+        'tipo' => $request->cate_outra,
         'user_id' => Auth::user()->id
       ]);
-      $cat_id = $request->categoria;
+         Produto::create([
+      'quantidade' => $request->quantidade,
+      'descricao' => $request->descricao, 
+      'categorias_id' => $categoria->id,
+      'user_id' => Auth::user()->id
+        ]);
+         return redirect('dashboard');
     }
     Produto::create([
       'quantidade' => $request->quantidade,
+      'disponibilidade' =>$request->disponivel,
       'descricao' => $request->descricao, 
-      'categorias_id' => $cat_id,
+      'categorias_id' => $request->categoria,
       'user_id' => Auth::user()->id
         ]);
          return redirect('dashboard');

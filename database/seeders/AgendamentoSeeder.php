@@ -17,7 +17,7 @@ class AgendamentoSeeder extends Seeder
     public function run()
     {
         foreach (Coletor::all() as $coletor) {
-        	foreach (Produto::all() as $produto) {
+        	foreach (Produto::all()->random(2) as $produto) {
    				Agendamento::factory(1)->create([
    					'coletors_id' => $coletor->id,
    					'produtos_id' => $produto->id,
