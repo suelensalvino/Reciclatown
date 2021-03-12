@@ -7,7 +7,11 @@
         <div class="overflow-hidden">
             <div class="bg-contain">
                 <div class="relative z-10 pb-8 bg-blue-900 sm:pb-16 lg:max-w-2xl lg:w-screen lg:pb-28 h-screen">    
-
+                  <a href="/">
+                    <svg  width="30" height="30" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="ml-6 text-white hover:text-red-400 dark:hover:text-white transition-colors duration-200" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                    </svg>
+                  </a>
                   <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-transparent">
                     <slot name="logo" >
                       <img class="mx-auto h-20 w-auto" src="../img/logo-b.png" alt="Workflow"/>
@@ -50,7 +54,7 @@
                                     </div>          
 
                                     <div>
-                                        <button type="submit" class="mb-20 shadow-2xl group relative w-full flex justify-center py-2 px-4 border border-transparent text-xl font-medium rounded-md text-blue-900 bg-red-400 hover:bg-white hover:text-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                        <button type="submit" class="mb-12 shadow-2xl group relative w-full flex justify-center py-2 px-4 border border-transparent text-xl font-medium rounded-md text-blue-900 bg-red-400 hover:bg-white hover:text-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                           <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                             <!-- Heroicon name: solid/lock-closed -->
                                             <svg class="h-5 w-5 text-blue-900 group-hover:text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
