@@ -164,7 +164,7 @@
     <div class="grid grid-cols-6 gap-6">
         <!-- Password -->
         <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-            <x-label for="password" :value="__('Password')" />
+            <x-label for="password" :value="__('Senha')" />
 
             <x-input id="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             type="password"
@@ -174,7 +174,7 @@
 
         <!-- Confirm Password -->
         <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-            <x-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-label for="password_confirmation" :value="__('Confirme a senha')" />
 
             <x-input id="password_confirmation" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             type="password"
