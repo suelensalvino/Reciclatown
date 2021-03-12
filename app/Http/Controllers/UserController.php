@@ -85,9 +85,12 @@ class UserController extends Controller
             'complemento' => $request->complemento,
             ]);
         }
+        if($request->tipo){
         $user->update([
             'tipo' => $request->tipo,
         ]);
+            
+        }
         if($request->perfil){
             $coletor = Coletor::Create([
                 'perfil' => $request->perfil,
