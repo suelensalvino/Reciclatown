@@ -43,8 +43,8 @@ class RegisteredUserController extends Controller
             'uf' => 'required',
             'cidade' => 'required',
             'bairro' => 'required',
-            'cep' => 'required|max:5|min:5',
-            'logradouro' => 'required|max:3|min:3',
+            'cep' => 'required|max:8|min:8',
+            'logradouro' => 'required',
             'complemento' => 'required',
         ]);
         if (strtolower($request->tipo) == 'usuario' || '' ) {
