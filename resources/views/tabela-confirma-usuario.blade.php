@@ -12,17 +12,17 @@
                 Produto
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-               coletor responsavel
+               Coletor responsavel
               </th>
             
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Status
               </th>
               <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                horário
+                Horário
               </th>
               <th scope="col" class="relative px-6 py-3">
-           olaa
+           
               </th>
 
             </tr>
@@ -57,7 +57,7 @@
                   <div class="grid grid-cols-2">
                     <div  x-data="{ aceitar: false}">
                       <div class="p-2 m-0.5 bg-green-200 text-green-600 border border-green-600 py-0.2 px-0.2 text-center rounded-full text-xs cursor-pointer" @click="aceitar = true">
-                          aceitar
+                          Aceitar
                       </div>
                               <div class="fixed z-10 inset-0 overflow-y-auto" style="display: none;" x-show="aceitar">
                                 <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -89,7 +89,7 @@
                     </div>
                       <div  x-data="{ recusar: false}">
                       <div class="p-2 m-0.5 bg-red-200 text-red-600 border border-red-600 py-0.2 px-0.2 text-center rounded-full text-xs cursor-pointer" @click="recusar = true">
-                         recusar
+                         Recusar
                       </div>
                               <div class="fixed z-10 inset-0 overflow-y-auto" style="display: none;" x-show="recusar">
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -142,7 +142,7 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                    <div  x-data="{ excluir: false}">
                 <div class="p-2 m-0.5 bg-red-200 text-red-600 border border-red-600 py-0.2 px-0.2 text-center rounded-full text-xs cursor-pointer" @click="excluir = true">
-                         excluir
+                         Excluir
                       </div>
                            <div class="fixed z-10 inset-0 overflow-y-auto" style="display: none;" x-show="excluir">
                                 <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
