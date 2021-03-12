@@ -15,7 +15,7 @@ class ColetorSeeder extends Seeder
      */
     public function run()
     {
- 		foreach (User::all() as $user){
+ 		foreach (User::where('tipo',  'coletor')->get() as $user){
  			Coletor::factory(1)->create([
  				'user_id' => $user->id
  			]);

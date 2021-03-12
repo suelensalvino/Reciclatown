@@ -17,13 +17,13 @@ class Coletor extends Model
 
     public function users(){
 
-    	return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
 
     }
 
     public function agendamentos(){
 
-    	return $this->hasMany(Agendamento::class);
+        return $this->hasMany(Agendamento::class);
 
     }
 }

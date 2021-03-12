@@ -23,21 +23,23 @@
     @endphp
         
    </div>
- </div>
-   
+ <div class="py-4" >
+    @php 
+    $coletor = Auth::user()->tipo;
+    @endphp
 
     <!-- verificando se o usuario logado é um coletor-->
     @if($coletor === "coletor")
       <div>
         <!-- aqui ficara o include do coletor-->
-
-        @include('confirma-agendamento')
+        @include('tabela-agendamento')
       </div>
     <!-- verificando se o usuario logado é um usuario-->
     @elseif($coletor !=="coletor")
       <div>
         @include('produto')
       </div> 
+      @include('tabela-confirma-usuario')
     @endif
   </div>
 

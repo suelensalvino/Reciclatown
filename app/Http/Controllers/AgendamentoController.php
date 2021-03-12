@@ -38,16 +38,27 @@ class AgendamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Produto $produto)
     {
-   
-        $agendamento = Agendamento::create([
+        
+        $user = Auth::user();
+        $agendamentos = Agendamento::where('produtos_id', '=', $produto->id)
+        ->where('coletors_id', '=', $user->id)->count();
+        if ($agendamentos) {
+            
+        }
+        elseif (!$agendamentos) {
+           
+         $agendamento = Agendamento::create([
             'horario' => $request->horario,
             'local'=> $request->local,
-            'produtos_id' => $request->produtos
+            'produtos_id' => $produto->id,
+            'coletors_id' =>  $user->id,
+            'status' => 'Aguardando resposta'
          ]);
-
-            return redirect('dashboard');
+        }
+         
+  return redirect('dashboard');
     }
 
     /**
@@ -69,7 +80,8 @@ class AgendamentoController extends Controller
      */
     public function edit(Agendamento $agendamento)
     {
-       //
+       
+        return redirect('update-agendamento',['agendamento'=>$agendamento]);
     }
 
     /**
@@ -81,11 +93,21 @@ class AgendamentoController extends Controller
      */
     public function update(Request $request, Agendamento $agendamento)
     {
+
         $agendamento->update([
-            'horario' => $request->horario,
-            'local' => $request->local, 
+            'status' => 'confirmado',
+           
         ]);
-            return redirect('dashboard');
+       return redirect('dashboard');
+    }
+
+    public function cancelar(Request $request, Agendamento $agendamento)
+    {
+        $agendamento->update([
+            'coletors_id' => null,
+           
+        ]);
+       return redirect('dashboard');
     }
 
     /**
@@ -98,6 +120,7 @@ class AgendamentoController extends Controller
     {
         $agendamento->delete();
         
-            return redirect('dashboard');
+        return redirect('dashboard');
     }
+  
 }
