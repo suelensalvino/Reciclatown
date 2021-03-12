@@ -16,13 +16,14 @@ class ProdutoSeeder extends Seeder
      */
     public function run()
     {
-        foreach (User::all() as $user){
-        	foreach (Categoria::where('user_id', $user->id)->get() as $categoria){
-        		Produto::factory(1)->create([
-        			'user_id' => $user->id,
-        			'categorias_id' => $categoria->id,
-        		]);
-        	}
+        foreach (User::where('tipo', 'usuario')->get() as $user){
+            foreach (Categoria::where('user_id', $user->id)->get() as $categoria){
+                Produto::factory(1)->create([
+                    'user_id' => $user->id,
+                    'categorias_id' => $categoria->id,
+                    'disponibilidade' => 'Final de Semana'
+                ]);
+            }
         }
     }
 }

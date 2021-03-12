@@ -16,7 +16,7 @@ class CategoriaSeeder extends Seeder
      */
     public function run()
     {
-        foreach (User::all() as $user){
+        foreach (User::where('tipo', 'usuario')->get() as $user){
         	$categorias = collect(['Computador','Celular','Memória Ram','Placa Mãe','Notebook', 'Monitor', 'Periféricos'])->random(5);
         
         foreach ($categorias as $categoria){
