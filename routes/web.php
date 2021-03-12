@@ -64,4 +64,5 @@ Route::get('/agendamentos/remover/{agendamento}', [AgendamentoController::class,
 ->name('rm-agendamento')
 ->middleware('auth');
 
+
 require __DIR__.'/auth.php';

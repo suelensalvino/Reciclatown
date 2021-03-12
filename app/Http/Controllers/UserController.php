@@ -74,6 +74,15 @@ class UserController extends Controller
     {
         $user->update([
             'tipo' => $request->tipo,
+            'name' => $request->name,
+            'email' => $request->email,
+            'nascimento' => $request->nascimento,
+            'uf' => $request->uf,
+            'cidade' => $request->cidade,
+            'bairro' => $request->bairro,
+            'cep' => $request->cep,
+            'logradouro' => $request->logradouro,
+            'complemento' => $request->complemento,
         ]);
         if($request->perfil){
             $coletor = Coletor::Create([
