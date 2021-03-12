@@ -12,6 +12,7 @@ class Agendamento extends Model
       protected $fillable = [
         'horario',
         'local',
+        'status',
         'coletors_id',
         'produtos_id'
     ];

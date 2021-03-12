@@ -13,6 +13,7 @@ class Produto extends Model
         
         'quantidade',
         'descricao',
+        'disponibilidade',
         'categorias_id',
         'user_id',
 
@@ -30,9 +31,9 @@ class Produto extends Model
 
     }
 
-    public function agendamento(){
+    public function agendamentos(){
 
-        return $this->hasOne(Agendamento::class);
+        return $this->hasMany(Agendamento::class, 'produtos_id');
     
     }
 }
