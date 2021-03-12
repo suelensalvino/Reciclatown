@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
             'logradouro' => 'required|max:3|min:3',
             'complemento' => 'required',
         ]);
-        if ($request->tipo == 'usuario' || '' ) {
+        if ((strtolower($request->tipo) == 'usuario' || '' ) {
         Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -63,7 +63,7 @@ class RegisteredUserController extends Controller
         ]));
          event(new Registered($user));
         }
-        else if ($request->tipo == 'coletor') {
+        else if (strtolower($request->tipo) == 'coletor') {
             Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
