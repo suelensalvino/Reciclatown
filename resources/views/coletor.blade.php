@@ -43,7 +43,7 @@
       @php
       $user = Auth::user()->id;
       @endphp
-      <form action="{{route('update-coletor',$user )}}" method="POST">
+      <form action="{{route('update-coletor', $user )}}" method="POST">
         @method('PUT')
         @csrf
         <!-- tipo_produto -->
@@ -55,18 +55,18 @@
             @if(Auth::user()->tipo != "coletor")
               <option class="block mt-1 w-full"  value="coletor" >Coletor(a)</option>
             @else
-              <option class="block mt-1 w-full"  value="usuario" >Usuario</option>
+              <option class="block mt-1 w-full"  value="usuario" >Usuário</option>
             @endif
           </x-select>
           <template x-if="tipo_user == 'coletor'">
                 <div>
                     <div class="mt-4">
-                    <x-label for="perfil" :value="__('perfil')" />
+                    <x-label for="perfil" :value="__('Perfil')" />
 
                     <x-textarea id="perfil" class="block mt-1 w-full" type="text" name="perfil" :value="old('perfil')" required />
                     </div>
                        <div class="mt-4">
-                        <x-label for="telefone" :value="__('telefone')" />
+                        <x-label for="telefone" :value="__('Telefone')" />
 
                         <x-input id="telefone" class="block mt-1 w-full" type="text" name="telefone" :value="old('telefone')" required />
                     </div>

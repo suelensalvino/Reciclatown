@@ -21,13 +21,6 @@
 		</div>
 
 		<div class=" m-3   text-left ">
-			<h6>Tipo</h6>
-			<div class="text-black text-opacity-100 ">
-				<strong> <p> {{ Auth::user()->tipo}} </p></strong>
-			</div>
-		</div>
-
-		<div class=" m-3   text-left ">
 			<h6>UF</h6>
 			<div class="text-black text-opacity-100 ">
 				<strong> <p> {{ Auth::user()->uf}} </p></strong>
@@ -87,6 +80,9 @@
 
 		<!--Botão de editar -->
 		<div x-data="{editPerfil: false}">
+			<br>
+			<br>
+			<br>
 			<x-button class="p-2 m-2 bg-blue-900 hover:bg-blue-800 text-center text-white" @click="editPerfil = true">Editar perfil</x-button>
 			
 			<!-- MODAL de editar -->
@@ -112,10 +108,6 @@
 								<div class="m-3">
 									<x-label for="nascimento" :value="__('Nascimento')" />
 									<x-input id="nascimento" class="block mt-1 w-full" type="date" name="nascimento" :value="old('nascimento')" required/>
-								</div>
-								<div class="m-3">
-									<x-label for="tipo" :value="__('Tipo')" />
-									<x-input id="tipo" class="block mt-1 w-full" type="Text" name="tipo" :value="old('tipo')" required/>
 								</div>
 								<div class="m-3">
 									<x-label for="uf" :value="__('UF')" />

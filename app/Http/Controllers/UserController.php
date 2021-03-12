@@ -71,9 +71,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
-    {
-        $user->update([
-            'tipo' => $request->tipo,
+    {   
+        if($request->name){
+            $user->update([
             'name' => $request->name,
             'email' => $request->email,
             'nascimento' => $request->nascimento,
@@ -83,6 +83,10 @@ class UserController extends Controller
             'cep' => $request->cep,
             'logradouro' => $request->logradouro,
             'complemento' => $request->complemento,
+            ]);
+        }
+        $user->update([
+            'tipo' => $request->tipo,
         ]);
         if($request->perfil){
             $coletor = Coletor::Create([
