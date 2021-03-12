@@ -19,13 +19,14 @@ class Agendamento extends Model
 
     public function produtos(){
 
-    	return $this->belongsTo(Produto::class);
+    	return $this->belongsTo(Produto::class, 'produtos_id');
    
     }
 
     public function coletors(){
 
-    	return $this->belongsTo(Coletor::class);
+    	return $this->belongsTo(Coletor::class, 'coletors_id');
     	
     }
+    
 }

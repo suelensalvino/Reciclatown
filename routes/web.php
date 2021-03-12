@@ -50,11 +50,14 @@ Route::post('/novo/agendamento', [AgendamentoController::class, 'store'])
 ->name('novo_agendamento')
 ->middleware('auth');
 
+
+Route::post('/novo/agendamento/{produto}', [AgendamentoController::class, 'store'])->name('novo_agendamento');
+
 Route::get('/agendamentos/remover/{agendamento}', [AgendamentoController::class, 'destroy'])
 ->name('rm-agendamento')
 ->middleware('auth');
 
-Route::put('/agendamentos/{agendamento}/update', [AgendamentoController::class, 'update'])
+Route::any('/agendamentos/{agendamento}/update', [AgendamentoController::class, 'update'])
 ->name('update-agendamento')
 ->middleware('auth');
 

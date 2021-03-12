@@ -36,4 +36,12 @@ class Produto extends Model
         return $this->hasMany(Agendamento::class, 'produtos_id');
     
     }
+    public function existe_agendamento(){
+        foreach ($this->agendamentos as $agendamento) {
+            if ($agendamento->status == 'confirmado') {
+                return true;
+            }
+        }
+        return false;
+    }
 }
