@@ -88,7 +88,7 @@
           <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">2) Localidade</h3>
+                <h3 class="text-lg font-medium leading-6 text-gray-900">2) Localização</h3>
                 <p class="mt-1 text-sm text-gray-600">
                     Informe corretamente sua localização 
                 </p>
@@ -143,49 +143,6 @@
     </div>
 </div>
 </div>
-<div class="hidden sm:block" aria-hidden="true">
-  <div class="py-5">
-    <div class="border-t border-gray-200"></div>
-</div>
-</div>
-
-<div class="mt-10 sm:mt-0">
-  <div class="md:grid md:grid-cols-3 md:gap-6">
-    <div class="md:col-span-1">
-      <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">3) Tipo de Perfil</h3>
-        <p class="mt-1 text-sm text-gray-600">
-          Como deseja ser identificado no nosso sistema?
-      </p>
-  </div>
-</div>
-<div class="mt-5 md:mt-0 md:col-span-2">
-
-    <!-- É coletor??????? -->
-    <div class="" x-data ="{tipo_user : ''}">
-     <x-label for="tipo" :value="__('Selecione um tipo')" />
-     <x-select id="tipo" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" type="text" name="tipo"   required x-model="tipo_user" >
-        <option class="block mt-1 w-full"  value="" >-------</option>
-        <option class="block mt-1 w-full"  value="coletor" >Coletor(a)</option>
-        <option class="block mt-1 w-full" value="usuario">Usuário</option>
-    </x-select>
-    <template x-if="tipo_user == 'coletor'">
-        <div>
-            <div class="mt-4">
-                <x-label for="perfil" :value="__('Faça um breve descrição do seu perfil')" />
-                <x-textarea id="perfil" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" type="text" name="perfil" :value="old('perfil')" required />
-            </div>
-            <div class="mt-4">
-                <x-label for="telefone" :value="__('Telefone')" />
-
-                <x-input id="telefone" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" type="text" name="telefone" :value="old('telefone')" required />
-            </div>
-        </div>
-    </template>
-</div>
-</div>
-</div>
-</div>
 
 <div class="hidden sm:block" aria-hidden="true">
   <div class="py-5">
@@ -197,7 +154,7 @@
   <div class="md:grid md:grid-cols-3 md:gap-6">
     <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">4) Senha</h3>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">3) Senha</h3>
         <p class="mt-1 text-sm text-gray-600">
          Por fim, defina uma senha forte. <br> Se possível alterne letras maiúsculas, minúsculas e caracteres especiais
      </p>
