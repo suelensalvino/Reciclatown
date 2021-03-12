@@ -68,7 +68,7 @@
 				<strong> <p> {{ Auth::user()->complemento}} </p></strong>
 			</div>
 		</div>
-		@if(Auth::user()->tipo == "Coletor(a)")
+		@if(Auth::user()->tipo == "coletor")
 
 			<div class=" m-3   text-left ">
 			<h6>Perfil:</h6>
